@@ -1,8 +1,9 @@
 h5py==2.7.0
-joblib
+joblib==0.14.1
 jupyter
 ipywidgets
 jupyter_contrib_nbextensions
+singledispatch==3.4.0.3
 Keras==2.1.2
 matplotlib==2.0.0
 nltk==3.4.5
@@ -14,3 +15,12 @@ requests==2.20.0
 scikit-learn==0.18.2
 scipy==0.18.1
 tqdm==4.15.0
+seaborn==0.7.1
+pymc3==3.3
+GPy==1.8.5
+xgboost==0.71
+graphviz
+gym==0.14.0
+gym_pull
+ppaquette-gym-doom
+enum34==1.1.6

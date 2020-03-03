@@ -3,13 +3,23 @@ FROM tensorflow/tensorflow:1.2.1-gpu-py3
 ARG DEBIAN_FRONTEND=noninteractive
 
 # install apt packages
-RUN apt-get update
-RUN apt-get install -yq python3-pip htop nano git wget libglib2.0-0 ffmpeg
+RUN apt-get update && \
+    apt-get install -yq python3-pip htop nano git wget libglib2.0-0 ffmpeg python3-tk \
+    unzip cmake zlib1g-dev libjpeg-dev xvfb libav-tools xorg-dev python-opengl swig3.0 \
+    libopenblas-dev liblapack-dev libsdl2-dev libboost-all-dev graphviz gcc g++ && \
+    ln -s /usr/bin/swig3.0 /usr/bin/swig
+
+
 
 # install python modules
 COPY requirements.txt .
 RUN pip3 install --upgrade pip
 RUN pip3 install -r requirements.txt
+RUN pip3 install GPyOpt==1.2.1 \
+                 gym[atari] \
+                 https://github.com/Lasagne/Lasagne/archive/master.zip \
+                 https://github.com/yandexdataschool/AgentNet/archive/master.zip
+RUN pip3 install gym[box2d]
 
 # setup juptyer
 RUN jupyter nbextension enable --py --sys-prefix widgetsnbextension

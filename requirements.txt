@@ -24,3 +24,4 @@ gym==0.14.0
 gym_pull
 ppaquette-gym-doom
 enum34==1.1.6
+scikit-image==0.13.1

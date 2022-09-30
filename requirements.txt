@@ -1,5 +1,5 @@
 h5py==2.7.0
-joblib==0.14.1
+joblib==1.2.0
 jupyter
 ipywidgets
 jupyter_contrib_nbextensions
